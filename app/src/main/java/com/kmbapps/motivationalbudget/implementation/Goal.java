@@ -1,0 +1,51 @@
+package com.kmbapps.motivationalbudget.implementation;
+
+import java.util.Calendar;
+
+/**
+ * Created by Kyle on 2/23/2016.
+ */
+public class Goal {
+
+    private String name;
+    private boolean mandatory;
+    private boolean completed;
+
+    public Goal(String name, boolean mandatory){
+        this.name = name;
+        this.mandatory = mandatory;
+    }
+
+    /**
+     * This method resets the status of a goal, setting it to not completed. If the goal is a
+     * recurring one, the due date will be updated.
+     */
+    public void reset(){
+        completed = false;
+    }
+
+    //getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isMandatory() {
+        return mandatory;
+    }
+
+    public void setMandatory(boolean mandatory) {
+        this.mandatory = mandatory;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+}
