@@ -3,6 +3,9 @@ package com.kmbapps.motivationalbudget;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +18,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private CharSequence mTitle = "Motivational Budget";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        restoreActionBar();
         return true;
     }
 
@@ -77,12 +83,16 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = new Fragment();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
+            mTitle = "@string/title_home";
+            fragment = HomePageFragment.newInstance("hello", "world");
+        } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -94,8 +104,23 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        Fragment existingFragment = fragmentManager.findFragmentById(R.id.container);
+        if(existingFragment!=null&&existingFragment.getClass().equals(fragment.getClass())){
+            return true;
+        }
+
+        fragmentManager.beginTransaction()
+                // .addToBackStack("blah")
+                .replace(R.id.container, fragment)
+                .commit();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void restoreActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(mTitle);
     }
 }

@@ -10,4 +10,10 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="action_bar_text_size">20sp</dimen>
+    <dimen name="action_bar_height">48dp</dimen>
+
+    <dimen name="touchable_ui_component_min">48dp</dimen>
+    <dimen name="activity_padding">8dp</dimen>
+    <dimen name="padding_inside_view">4dp</dimen>
 </resources>
