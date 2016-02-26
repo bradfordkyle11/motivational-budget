@@ -182,6 +182,7 @@
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_padding">8dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/values/values.xml -->
     <eat-comment/>
@@ -226,6 +227,9 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
+    <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="padding_inside_view">4dp</dimen>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="snackbar_action_inline_max_width">128dp</dimen>
@@ -240,11 +244,15 @@
     <dimen name="snackbar_text_size">14sp</dimen>
     <dimen name="tab_max_width">264dp</dimen>
     <dimen name="tab_min_width">72dp</dimen>
+    <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="touchable_ui_component_min">48dp</dimen>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/drawables.xml -->
     <eat-comment/>
     <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
     <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
+    <item name="ic_menu_save" type="drawable">@android:drawable/ic_menu_save</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_slideshow" type="drawable">@android:drawable/ic_menu_slideshow</item>
@@ -295,6 +303,7 @@
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_example">Example action</string>
+    <string name="action_save">Save</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">Motivational Budget</string>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/values/values.xml -->
@@ -302,6 +311,9 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="hint_goal_name">Enter goal name.</string>
+    <string name="menu_nav_history">History</string>
+    <string name="menu_nav_home">Home</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
@@ -310,6 +322,8 @@
     <!-- From: file:/E:/Users/Kyle/Development/AndroidStudioProjects/MotivationalBudget/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_edit_goal">Edit Goal</string>
+    <string name="title_home">Home</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>

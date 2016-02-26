@@ -35,7 +35,15 @@ public class Checklist {
     }
 
     public void addGoal(Goal newGoal){
-        goals.add(newGoal);
+        //insert the new goal if not already in the checklist
+        if (!goals.contains(newGoal)) {
+            goals.add(newGoal);
+        }
+
+        //update the goal
+        else {
+            goals.set(goals.indexOf(newGoal), newGoal);
+        }
     }
 
     public ArrayList<Goal> getGoals() {

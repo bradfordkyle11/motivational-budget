@@ -16,10 +16,10 @@ import java.util.ArrayList;
 public class StorageHandler {
 
     private static boolean checklistsLoaded = false;
-    private static Checklist myChecklist;
+    private static Checklist myChecklist = new Checklist();
     
     private static boolean budgetLoaded = false;
-    private static Budget myBudget;
+    private static Budget myBudget = new Budget();
 
     private static String savedChecklistFile = "checklists.txt";
     private static String savedBudgetFile = "budget.txt";
@@ -45,7 +45,9 @@ public class StorageHandler {
                 System.out.println("SystemNotFoundException: " + e.getMessage());
             }
         }
-
+        if (myChecklist==null){
+            myChecklist = new Checklist();
+        }
         return myChecklist;
     }
 
@@ -86,7 +88,9 @@ public class StorageHandler {
                 System.out.println("SystemNotFoundException: " + e.getMessage());
             }
         }
-
+        if (myBudget==null){
+            myBudget = new Budget();
+        }
         return myBudget;
     }
 
@@ -96,6 +100,26 @@ public class StorageHandler {
             FileOutputStream fos = context.openFileOutput(savedBudgetFile, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);
             os.writeObject(myBudget);
+            os.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException: " + e.getMessage());
+        }
+        catch (IOException e){
+            System.out.println("IOException: " + e.getMessage());
+        }
+    }
+
+    public static void saveGoal(Context context, Goal goal){
+        try{
+            if (!checklistsLoaded){
+                loadChecklists(context);
+            }
+            myChecklist.addGoal(goal);
+
+            FileOutputStream fos = context.openFileOutput(savedChecklistFile, Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(myChecklist);
             os.close();
         }
         catch (FileNotFoundException e){
